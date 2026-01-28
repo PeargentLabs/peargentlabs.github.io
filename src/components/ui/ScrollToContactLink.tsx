@@ -5,11 +5,13 @@ import React, { ReactNode } from "react";
 interface ScrollToContactLinkProps {
     children: ReactNode;
     className?: string;
+    onClick?: () => void;
 }
 
 export const ScrollToContactLink = ({
     children,
     className,
+    onClick,
 }: ScrollToContactLinkProps) => {
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
@@ -17,6 +19,7 @@ export const ScrollToContactLink = ({
         if (contactSection) {
             contactSection.scrollIntoView({ behavior: "smooth" });
         }
+        if (onClick) onClick();
     };
 
     return (

@@ -32,7 +32,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/[0.03] via-background to-background pointer-events-none"></div>
 
             <div className="relative max-w-5xl w-full text-left space-y-6">
-              <h1 className="text-xl sm:text-6xl font-semibold tracking-tight text-white">
+              <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-white">
                 Advancing Artificial Intelligence <span className="text-white/20 font-light mx-2">|</span> <span className="text-white/60">Research</span><span className="text-peargent-green font-bold">.</span>
               </h1>
               <p className="text-lg text-white/70 max-w-2xl leading-relaxed font-light">
