@@ -23,6 +23,8 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-newsreader);
   --font-mono: var(--font-plex-mono);
+  /* Wordmark only — see Header.tsx */
+  --font-display: var(--font-instrument-serif);
 }
 
 body {

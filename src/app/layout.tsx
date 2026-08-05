@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Newsreader, IBM_Plex_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,6 +13,15 @@ const newsreader = Newsreader({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+// Display face, used only for the "peargent." wordmark — matches peargent-docs.
+// Ships at 400 only; it's a high-contrast display serif, so never bold it.
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: ["400"],
   display: "swap",
 });
 
@@ -44,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${newsreader.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${newsreader.variable} ${plexMono.variable} ${instrumentSerif.variable}`}>
       <body className="antialiased">
         {children}
       </body>

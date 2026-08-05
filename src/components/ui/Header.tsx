@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ScrollToContactLink } from "@/components/ui/ScrollToContactLink";
-import { Github, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 function pad(n: number) {
@@ -28,9 +28,13 @@ export function Header() {
     return (
         <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
             <div className="mx-auto flex max-w-[1180px] items-center justify-between px-6 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10">
-                <div className="z-50 flex items-baseline gap-2 md:justify-self-start">
-                    <span className="font-serif text-[28px] font-semibold tracking-[0.01em] text-ink">peargent<span className="text-[34px] font-semibold text-accent">.</span></span>
-                    <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-ink-soft">Labs</span>
+                <div className="z-50 flex items-baseline gap-2.5 md:justify-self-start">
+                    <span className="font-display text-[34px] font-semibold leading-none text-ink">
+                        peargent<span className="text-[42px] leading-none text-accent">.</span>
+                    </span>
+                    <span className="border border-line bg-paper-dim px-1.75 pb-1 pt-1.25 font-mono text-[9.5px] font-medium uppercase leading-none tracking-[0.2em] text-ink">
+                        Labs
+                    </span>
                 </div>
 
                 {/* Desktop Navigation */}
@@ -38,7 +42,7 @@ export function Header() {
                     <Link href="#research" className="text-ink-soft transition-colors hover:text-ink">Research</Link>
                     <Link href="#projects" className="text-ink-soft transition-colors hover:text-ink">Projects</Link>
                     <Link
-                        href="https://github.com/Peargent"
+                        href="https://github.com/PeargentLabs"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-ink-soft transition-colors hover:text-ink"
@@ -80,7 +84,7 @@ export function Header() {
                         Projects
                     </Link>
                     <Link
-                        href="https://github.com/Peargent"
+                        href="https://github.com/PeargentLabs"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-serif text-2xl text-ink transition-colors hover:text-accent"

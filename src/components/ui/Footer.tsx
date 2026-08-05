@@ -9,7 +9,7 @@ export function Footer() {
                     © {new Date().getFullYear()} Peargent Labs
                 </span>
                 <Link
-                    href="https://github.com/Peargent"
+                    href="https://github.com/PeargentLabs"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-ink-soft transition-colors hover:text-ink"
