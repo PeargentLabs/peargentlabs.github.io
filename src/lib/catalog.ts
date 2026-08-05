@@ -39,11 +39,11 @@ export const research: CatalogEntry[] = [
             href: "https://peargentlabs.github.io/otter-paper/",
         },
         // Pages paths are case-sensitive and must match the repo name (Otter-Chess).
-        primaryLink: { label: "Try it yourself", href: "https://peargentlabs.github.io/Otter-Chess/play" },
+        primaryLink: { label: "Try it yourself", href: "https://peargentlabs.github.io/otter-chess/play" },
         // Rendered in array order.
         resources: [
-            { kind: "Site", label: "Website", href: "https://peargentlabs.github.io/Otter-Chess" },
-            { kind: "Code", label: "GitHub", href: "https://github.com/PeargentLabs/Otter-Chess" },
+            { kind: "Site", label: "Website", href: "https://peargentlabs.github.io/otter-chess" },
+            { kind: "Code", label: "GitHub", href: "https://github.com/PeargentLabs/otter-chess" },
             { kind: "Model", label: "Hugging Face", href: "https://huggingface.co/peargentlabs/otter-chess" },
             { kind: "Logs", label: "wandb", href: "https://api.wandb.ai/links/peargent-ai-labs/3mu4f1jv" },
         ],
