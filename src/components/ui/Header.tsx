@@ -3,51 +3,96 @@
 import Link from "next/link";
 import { ScrollToContactLink } from "@/components/ui/ScrollToContactLink";
 import { Github, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+function pad(n: number) {
+    return n.toString().padStart(2, "0");
+}
 
 export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [clock, setClock] = useState("—");
+
+    useEffect(() => {
+        const tick = () => {
+            const d = new Date();
+            setClock(
+                `${d.getUTCFullYear()}.${pad(d.getUTCMonth() + 1)}.${pad(d.getUTCDate())} — ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}:${pad(d.getUTCSeconds())} UTC`
+            );
+        };
+        tick();
+        const id = setInterval(tick, 1000);
+        return () => clearInterval(id);
+    }, []);
 
     return (
-        <header className="fixed top-0 left-0 right-0 border-b border-white/5 bg-background/50 backdrop-blur-md z-50">
-            <div className="flex items-center justify-between px-6 md:px-12 py-4">
-                <div className="flex items-center gap-1 z-50 relative">
-                    <span className="font-instrument text-3xl font-semibold text-white">peargent<span className="text-peargent-green font-bold">.</span></span>
-                    <span className="text-md uppercase tracking-widest opacity-60 mt-2 text-white">Labs</span>
+        <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
+            <div className="mx-auto flex max-w-[1180px] items-center justify-between px-6 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10">
+                <div className="z-50 flex items-baseline gap-2 md:justify-self-start">
+                    <span className="font-serif text-[28px] font-semibold tracking-[0.01em] text-ink">peargent<span className="text-[34px] font-semibold text-accent">.</span></span>
+                    <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-ink-soft">Labs</span>
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-6 text-sm font-medium opacity-80">
-                    <Link href="https://github.com/Peargent" target="_blank" rel="noopener noreferrer" className="text-white hover:text-peargent-green transition-colors">GitHub</Link>
-                    <ScrollToContactLink className="px-4 py-2 bg-white text-black font-semibold border border-transparent hover:bg-black hover:text-peargent-green hover:border-peargent-green transition-all text-xs">Contact Us</ScrollToContactLink>
+                <nav className="hidden items-center gap-6 font-mono text-xs tracking-wide md:flex">
+                    <Link href="#research" className="text-ink-soft transition-colors hover:text-ink">Research</Link>
+                    <Link href="#projects" className="text-ink-soft transition-colors hover:text-ink">Projects</Link>
+                    <Link
+                        href="https://github.com/Peargent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-ink-soft transition-colors hover:text-ink"
+                    >
+                        GitHub
+                    </Link>
+                </nav>
+
+                <div className="hidden items-center gap-2 font-mono text-[11px] text-ink-soft md:flex md:justify-self-end">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_0_3px_var(--color-accent-soft)]" />
+                    <span>{clock}</span>
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden text-white p-2 z-50 relative"
+                    className="relative z-50 p-2 text-ink md:hidden"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label="Toggle menu"
                 >
-                    {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
                 </button>
             </div>
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 animate-in fade-in duration-200">
+                <div className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center gap-8 bg-paper/98 backdrop-blur-xl md:hidden">
+                    <Link
+                        href="#research"
+                        className="font-serif text-2xl text-ink transition-colors hover:text-accent"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        Research
+                    </Link>
+                    <Link
+                        href="#projects"
+                        className="font-serif text-2xl text-ink transition-colors hover:text-accent"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        Projects
+                    </Link>
                     <Link
                         href="https://github.com/Peargent"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-2xl text-white hover:text-peargent-green transition-colors font-medium"
+                        className="font-serif text-2xl text-ink transition-colors hover:text-accent"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         GitHub
                     </Link>
                     <ScrollToContactLink
-                        className="text-2xl text-white hover:text-peargent-green transition-colors font-medium cursor-pointer"
+                        className="cursor-pointer font-serif text-2xl text-ink transition-colors hover:text-accent"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        Contact Us
+                        Get in Touch
                     </ScrollToContactLink>
                 </div>
             )}

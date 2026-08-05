@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, Playfair_Display } from "next/font/google";
+import { Inter, Newsreader, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,18 +8,19 @@ const inter = Inter({
   display: "swap",
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-serif",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument",
-  weight: "400",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -36,10 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${inter.variable} ${playfair.variable} ${instrumentSerif.variable} antialiased`}
-      >
+    <html lang="en" className={`${inter.variable} ${newsreader.variable} ${plexMono.variable}`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>
