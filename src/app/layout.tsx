@@ -27,7 +27,14 @@ export const metadata: Metadata = {
   title: "Peargent Labs",
   description: "Building powerful AI agents, made simple.",
   icons: {
-    icon: "/favicon-96x96.png",
+    // Ordered smallest-to-largest with explicit types so browsers can pick;
+    // the SVG wins wherever it's supported. Files live in public/.
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/web-app-manifest-192x192.png",
   },
 };
 
