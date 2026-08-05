@@ -38,10 +38,11 @@ export const research: CatalogEntry[] = [
             label: "Read the paper",
             href: "https://github.com/PeargentLabs/otter-paper/blob/main/Otter_A_Time-Aware_History-Conditioned_Human_Chess_AI.pdf",
         },
-        primaryLink: { label: "Try it yourself", href: "https://peargentlabs.github.io/otter-chess/play" },
+        // Pages paths are case-sensitive and must match the repo name (Otter-Chess).
+        primaryLink: { label: "Try it yourself", href: "https://peargentlabs.github.io/Otter-Chess/play" },
         // Rendered in array order.
         resources: [
-            { kind: "Site", label: "Website", href: "https://peargentlabs.github.io/otter-chess" },
+            { kind: "Site", label: "Website", href: "https://peargentlabs.github.io/Otter-Chess" },
             { kind: "Code", label: "GitHub", href: "https://github.com/PeargentLabs/Otter-Chess" },
             { kind: "Model", label: "Hugging Face", href: "https://huggingface.co/peargentlabs/otter-chess" },
             { kind: "Logs", label: "wandb", href: "https://api.wandb.ai/links/peargent-ai-labs/3mu4f1jv" },
