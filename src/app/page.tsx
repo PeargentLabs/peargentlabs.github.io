@@ -20,7 +20,10 @@ export default function Home() {
       <main className="flex flex-1 flex-col">
         {/* Hero Section */}
         <section className="relative mx-auto w-full max-w-[1180px] px-6 pb-16 pt-16 md:px-10 md:pb-20 md:pt-20">
-          <NeuroBackground className="pointer-events-none absolute -left-10 -right-10 -top-[100px] -bottom-[10px] z-0 hidden h-[calc(100%+110px)] w-[calc(100%+80px)] md:block" />
+          {/* Vertical bleed everywhere; sideways bleed only at xl. Below that the
+              section is still narrower than max-w-[1180px], so there are no gutters
+              to bleed into and a negative inset would force horizontal scroll. */}
+          <NeuroBackground className="pointer-events-none absolute inset-x-0 -top-[70px] z-0 h-[calc(100%+80px)] w-full md:-top-25 md:h-[calc(100%+110px)] xl:-left-10 xl:-right-10 xl:w-[calc(100%+80px)]" />
 
           <div className="relative z-10 grid grid-cols-1 gap-10 md:grid-cols-[200px_1fr] md:gap-12">
             <div className="font-mono text-[11px] leading-[2.1] text-ink-soft">
