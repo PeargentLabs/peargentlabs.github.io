@@ -31,7 +31,7 @@ export const research: CatalogEntry[] = [
         slug: "human-like-chess-ai",
         code: "PGL-R001",
         kind: "research",
-        title: "A Chess Engine That Plays Like You",
+        title: "Otter: A Time-Aware, History-Conditioned Human Chess AI",
         description:
             "A chess AI trained to move the way humans do rather than search the way engines do — modeling human intuition and outperforming Maia on human-move prediction.",
         paperLink: {
