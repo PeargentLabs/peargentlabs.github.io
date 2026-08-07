@@ -35,8 +35,8 @@ export const research: CatalogEntry[] = [
         description:
             "A chess AI trained to move the way humans do rather than search the way engines do — modeling human intuition and outperforming Maia on human-move prediction.",
         paperLink: {
-            label: "Read the paper (Github)",
-            href: "https://peargentlabs.github.io/otter-paper/",
+            label: "Read the paper (arXiv)",
+            href: "https://arxiv.org/abs/2608.05206",
         },
         // Pages paths are case-sensitive and must match the repo name (Otter-Chess).
         primaryLink: { label: "Try it yourself", href: "https://peargentlabs.github.io/otter-chess/play" },
