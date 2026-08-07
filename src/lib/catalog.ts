@@ -13,6 +13,8 @@ export interface CatalogEntry {
     code: string;
     kind: "research" | "project";
     title: string;
+    /** Research only — shown under the title on the card, e.g. "Taurn Kumar S". */
+    authors?: string;
     description: string;
     date?: string;
     status?: string;
@@ -32,10 +34,12 @@ export const research: CatalogEntry[] = [
         code: "PGL-R001",
         kind: "research",
         title: "Otter: A Time-Aware, History-Conditioned Human Chess AI",
+        authors: "Taurn Kumar S",
         description:
             "A chess AI trained to move the way humans do rather than search the way engines do — modeling human intuition and outperforming Maia on human-move prediction.",
+        date: "arXiv 2026",
         paperLink: {
-            label: "Read the paper (arXiv)",
+            label: "Read the paper",
             href: "https://arxiv.org/abs/2608.05206",
         },
         // Pages paths are case-sensitive and must match the repo name (Otter-Chess).

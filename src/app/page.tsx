@@ -69,6 +69,7 @@ export default function Home() {
                     key={entry.slug}
                     code={entry.code}
                     title={entry.title}
+                    authors={entry.authors}
                     description={entry.description}
                     date={entry.date}
                     status={entry.status}
@@ -99,6 +100,7 @@ export default function Home() {
                     key={entry.slug}
                     code={entry.code}
                     title={entry.title}
+                    authors={entry.authors}
                     description={entry.description}
                     date={entry.date}
                     status={entry.status}
